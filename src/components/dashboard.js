@@ -33,33 +33,31 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!localStorage.getItem('dateRange')) {
-      localStorage.setItem('dateRange', JSON.stringify({ startDate: yesterday, endDate: today }));
-      axios
-        .get(
-          `https://test.mycrmreporting.com/api/pipedrive/deals/32d2ebff-1cec-46ab-8c4d-0cfbf6f6cea8?startDate=${Object.keys(dateRange).length === 0
-            ? yesterday
-            : dateRange.startDate
-          }&endDate=${Object.keys(dateRange).length === 0 ? today : dateRange.endDate
-          }`,
-        )
-        .then((res) => {
-          dispatch(setStoredLeads(res.data.generated_lead));
-          dispatch(setStoredCalls(res.data.generated_discovery));
-          dispatch(setStoredDemos(res.data.generated_demo));
-          setRequest(true);
-        });
+      console.log('Enter valid endpoint here');
+      // const dateRange = JSON.parse(localStorage.getItem('dateRange'));
+      // axios
+      //   .get(
+      //   `URL with parameters`,
+      //   )
+      //   .then((res) => {
+      //     dispatch(setStoredLeads(res.data.generated_lead));
+      //     dispatch(setStoredCalls(res.data.generated_discovery));
+      //     dispatch(setStoredDemos(res.data.generated_demo));
+      //     setRequest(true);
+      //   });
     } else {
-      const dateRange = JSON.parse(localStorage.getItem('dateRange'));
-      axios
-        .get(
-          `https://test.mycrmreporting.com/api/pipedrive/deals/32d2ebff-1cec-46ab-8c4d-0cfbf6f6cea8?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`,
-        )
-        .then((res) => {
-          dispatch(setStoredLeads(res.data.generated_lead));
-          dispatch(setStoredCalls(res.data.generated_discovery));
-          dispatch(setStoredDemos(res.data.generated_demo));
-          setRequest(true);
-        });
+      console.log('Enter valid endpoint here');
+      // const dateRange = JSON.parse(localStorage.getItem('dateRange'));
+      // axios
+      //   .get(
+      //   `URL with parameters`,
+      //   )
+      //   .then((res) => {
+      //     dispatch(setStoredLeads(res.data.generated_lead));
+      //     dispatch(setStoredCalls(res.data.generated_discovery));
+      //     dispatch(setStoredDemos(res.data.generated_demo));
+      //     setRequest(true);
+      //   });
     }
   }, [dateRange]);
 
