@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="flex border-b border-slate-200 border-b-l border-b-r shadow-sm rounded-lg flex-1 py-2 xl:py-0 hover:scale-[103%] hover:border hover:border-slate-200 ease-out duration-300 cursor-pointer hover:bg-white"
+>
+  <div
+    className="md:w-[15%] w-[25%]  flex justify-center items-center text-5xl font-bold text-slate-500 lg:text-5xl"
+  >
+    1
+  </div>
+  <div
+    className="md:w-[20%] w-[25%] flex flex-col justify-center items-center"
+  >
+    <img
+      alt="profile-pic"
+      className="rounded-full border border-slate-300 h-[3em]"
+      data-testid="profile-picture"
+      src="aString"
+    />
+    <h1
+      className="text-slate-700 font-bold text-sm"
+    >
+      John
+    </h1>
+  </div>
+  <div
+    className="flex-1 flex justify-center items-center"
+  >
+    <div
+      className="relative"
+    >
+      <svg
+        className="rc-progress-circle h-[70px] md:block hidden"
+        role="presentation"
+        style={Object {}}
+        viewBox="-50 -50 100 100"
+      >
+        <circle
+          className="rc-progress-circle-trail"
+          cx={0}
+          cy={0}
+          r={46}
+          stroke="#D9D9D9"
+          strokeLinecap="round"
+          strokeWidth={8}
+          style={
+            Object {
+              "fillOpacity": 0,
+              "stroke": "#D9D9D9",
+              "strokeDasharray": "289.02652413026095px 289.02652413026095",
+              "strokeDashoffset": 0,
+              "transform": "rotate(-90deg)",
+              "transformOrigin": "0 0",
+              "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s, opacity .3s ease 0s",
+            }
+          }
+        />
+        <circle
+          className="rc-progress-circle-path"
+          cx={0}
+          cy={0}
+          opacity={1}
+          r={46}
+          strokeLinecap="round"
+          strokeWidth={8}
+          style={
+            Object {
+              "fillOpacity": 0,
+              "stroke": "#4CBEEB",
+              "strokeDasharray": "289.02652413026095px 289.02652413026095",
+              "strokeDashoffset": 148.51326206513048,
+              "transform": "rotate(-90deg)",
+              "transformOrigin": "0 0",
+              "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s, opacity .3s ease 0s",
+            }
+          }
+        />
+      </svg>
+      <div>
+        <h1
+          className="absolute top-9 left-6 font-bold text-slate-700 hidden md:block"
+        >
+          50
+          %
+        </h1>
+        <h1
+          className=" md:flex flex-col items-center absolute bottom-8 marker:text-slate-600 hidden text-start w-full"
+        >
+          10
+        </h1>
+      </div>
+    </div>
+    <h1
+      className="text-3xl font-bold md:hidden"
+    >
+      50
+      %
+    </h1>
+  </div>
+  <div
+    className="flex-1 flex flex-col justify-center pr-1 md:pr-0"
+  >
+    <h1
+      className="md:text-base lg:text-xl xl:text-base text-slate-600 font-bold line leading-tight hidden md:block lg:text-end lg:pr-[5%] xl:pr-[10%]"
+    >
+      5 Booked Demos
+    </h1>
+    <h1
+      className="text-2xl font-bold md:hidden"
+    >
+      5
+    </h1>
+    <h2
+      className="text-slate-700 text-xs md:text-sm lg:text-end lg:pr-[5%] xl:pr-[10%]"
+    >
+      1 Calls Made
+    </h2>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="flex border-b border-slate-200 border-b-l border-b-r shadow-sm rounded-lg flex-1 py-2 xl:py-0 hover:scale-[103%] hover:border hover:border-slate-200 ease-out duration-300 cursor-pointer hover:bg-white"
+>
+  <div
+    className="md:w-[15%] w-[25%]  flex justify-center items-center text-5xl font-bold text-slate-500 lg:text-5xl"
+  >
+    1
+  </div>
+  <div
+    className="md:w-[20%] w-[25%] flex flex-col justify-center items-center"
+  >
+    <img
+      alt="profile-pic"
+      className="rounded-full border border-slate-300 h-[3em]"
+      data-testid="profile-picture"
+      src="aString"
+    />
+    <h1
+      className="text-slate-700 font-bold text-sm"
+    >
+      John
+    </h1>
+  </div>
+  <div
+    className="flex-1 flex justify-center items-center"
+  >
+    <div
+      className="relative"
+    >
+      <svg
+        className="rc-progress-circle h-[70px] md:block hidden"
+        role="presentation"
+        style={Object {}}
+        viewBox="-50 -50 100 100"
+      >
+        <circle
+          className="rc-progress-circle-trail"
+          cx={0}
+          cy={0}
+          r={46}
+          stroke="#D9D9D9"
+          strokeLinecap="round"
+          strokeWidth={8}
+          style={
+            Object {
+              "fillOpacity": 0,
+              "stroke": "#D9D9D9",
+              "strokeDasharray": "289.02652413026095px 289.02652413026095",
+              "strokeDashoffset": 0,
+              "transform": "rotate(-90deg)",
+              "transformOrigin": "0 0",
+              "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s, opacity .3s ease 0s",
+            }
+          }
+        />
+        <circle
+          className="rc-progress-circle-path"
+          cx={0}
+          cy={0}
+          opacity={1}
+          r={46}
+          strokeLinecap="round"
+          strokeWidth={8}
+          style={
+            Object {
+              "fillOpacity": 0,
+              "stroke": "#4CBEEB",
+              "strokeDasharray": "289.02652413026095px 289.02652413026095",
+              "strokeDashoffset": 148.51326206513048,
+              "transform": "rotate(-90deg)",
+              "transformOrigin": "0 0",
+              "transition": "stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s, stroke-width .06s ease .3s, opacity .3s ease 0s",
+            }
+          }
+        />
+      </svg>
+      <div>
+        <h1
+          className="absolute top-9 left-6 font-bold text-slate-700 hidden md:block"
+        >
+          50
+          %
+        </h1>
+        <h1
+          className=" md:flex flex-col items-center absolute bottom-8 marker:text-slate-600 hidden text-start w-full"
+        >
+          10
+        </h1>
+      </div>
+    </div>
+    <h1
+      className="text-3xl font-bold md:hidden"
+    >
+      50
+      %
+    </h1>
+  </div>
+  <div
+    className="flex-1 flex flex-col justify-center pr-1 md:pr-0"
+  >
+    <h1
+      className="md:text-base lg:text-xl xl:text-base text-slate-600 font-bold line leading-tight hidden md:block lg:text-end lg:pr-[5%] xl:pr-[10%]"
+    >
+      5 Booked Demos
+    </h1>
+    <h1
+      className="text-2xl font-bold md:hidden"
+    >
+      5
+    </h1>
+    <h2
+      className="text-slate-700 text-xs md:text-sm lg:text-end lg:pr-[5%] xl:pr-[10%]"
+    >
+      1 Calls Made
+    </h2>
+  </div>
+</div>
+`;

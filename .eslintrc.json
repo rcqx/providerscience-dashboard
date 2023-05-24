@@ -1,0 +1,55 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/no-unresolved": "off",
+    "no-shadow": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": "off",
+    "react/button-has-type": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "react/prop-types": "off",
+    "max-len": "off",
+    "react/jsx-boolean-value": "off",
+    "import/no-extraneous-dependencies": "off",
+    "object-curly-newline": "off",
+    "arrow-body-style": "off",
+    "operator-linebreak": "off",
+    "no-unneeded-ternary": "off",
+    "no-var": "off",
+    "no-plusplus": "off",
+    "indent": "off",
+    // "no-unused-vars": "off",
+    "import/extensions": "off",
+    "global-require": "off"
+  },
+  "overrides": [
+    {
+      // feel free to replace with your preferred file pattern - eg. 'src/**/*Slice.js' or 'redux/**/*Slice.js'
+      "files": ["src/**/*Slice.js"],
+      // avoid state param assignment
+      "rules": { "no-param-reassign": ["error", { "props": false }] }
+    }
+  ],
+  "ignorePatterns": ["dist/", "build/"]
+}

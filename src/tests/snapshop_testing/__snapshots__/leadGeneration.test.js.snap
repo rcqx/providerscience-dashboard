@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="flex-1 xl:mb-0 xl:h-[85%]"
+>
+  <h1
+    className="text-start text-[#4CBEEB] text-xl lg:text-2xl font-bold mb-2 mt-2 tracking-tight"
+  >
+    Lead Generation
+  </h1>
+  <div
+    className="border border-slate-200 flex py-1 rounded-t-lg"
+  >
+    <h1
+      className="font-bold text-slate-700 md:w-[15%] w-[25%]"
+    >
+      Rank
+    </h1>
+    <h1
+      className="font-bold text-slate-700 md:w-[20%] w-[25%]"
+    >
+      Name
+    </h1>
+    <h1
+      className="font-bold text-slate-700 flex-1 lg:pl-2"
+    >
+      Goal
+    </h1>
+    <h1
+      className="font-bold flex-1 text-slate-700 lg:text-end lg:pr-6"
+    >
+      Leads
+    </h1>
+  </div>
+  <div
+    className="flex flex-col justify-end w-full h-full border-x rounded-b-lg shadow-md"
+  />
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="flex-1 xl:mb-0 xl:h-[85%]"
+>
+  <h1
+    className="text-start text-[#4CBEEB] text-xl lg:text-2xl font-bold mb-2 mt-2 tracking-tight"
+  >
+    Lead Generation
+  </h1>
+  <div
+    className="border border-slate-200 flex py-1 rounded-t-lg"
+  >
+    <h1
+      className="font-bold text-slate-700 md:w-[15%] w-[25%]"
+    >
+      Rank
+    </h1>
+    <h1
+      className="font-bold text-slate-700 md:w-[20%] w-[25%]"
+    >
+      Name
+    </h1>
+    <h1
+      className="font-bold text-slate-700 flex-1 lg:pl-2"
+    >
+      Goal
+    </h1>
+    <h1
+      className="font-bold flex-1 text-slate-700 lg:text-end lg:pr-6"
+    >
+      Leads
+    </h1>
+  </div>
+  <div
+    className="flex flex-col justify-end w-full h-full border-x rounded-b-lg shadow-md"
+  />
+</div>
+`;
