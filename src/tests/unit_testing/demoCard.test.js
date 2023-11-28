@@ -57,7 +57,7 @@ test('Circle progress bar renders if isCircular is true', () => {
 });
 
 // SVG default Profile picture renders if profilePicture is null
-test("SVG default Profile picture renders if profilePicture is null", () => {
+test('SVG default Profile picture renders if profilePicture is null', () => {
   const mockCard = {
     name: 'John Doe',
     number: 1,
@@ -84,11 +84,11 @@ test("SVG default Profile picture renders if profilePicture is null", () => {
 });
 
 // Profile picture renders if profilePicture props is passed correclty
-test("Profile picture renders if profilePicture props is passed correclty", () => {
+test('Profile picture renders if profilePicture props is passed correclty', () => {
   const mockCard = {
     name: 'John Doe',
     number: 1,
-    profilePicture: "pictureProfileProp",
+    profilePicture: 'pictureProfileProp',
     demos: 5,
     percentage: 50,
     madeCalls: 100,

@@ -17,7 +17,7 @@ test('Circle progress bar renders if isCircular is true', () => {
     <CallCard
       name={mockCard.name}
       number={mockCard.number}
-      profilePicture={"aString"}
+      profilePicture="aString"
       percentage={mockCard.percentage}
       calls={mockCard.calls}
       goal={mockCard.goal}
@@ -30,9 +30,9 @@ test('Circle progress bar renders if isCircular is true', () => {
 test('Circle progress bar renders if isCircular is true', () => {
   render(
     <CallCard
-      name={"John Doe"}
+      name="John Doe"
       number={1}
-      profilePicture={"aString"}
+      profilePicture="aString"
       percentage={50}
       calls={1}
       goal={10}

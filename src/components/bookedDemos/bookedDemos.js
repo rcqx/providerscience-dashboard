@@ -1,7 +1,7 @@
 import DemoCard from './demoCard';
 import CardLoader from '../cardLoader';
 
-const BookedDemos = ({ allDemos, request }) => {
+const BookedDemos = ({ allDemos, request, fetchingData }) => {
   const demos = allDemos
     .slice(0, 6)
     .sort((a, b) => b.total_deals - a.total_deals)
@@ -26,13 +26,19 @@ const BookedDemos = ({ allDemos, request }) => {
         </h1>
       </div>
       <div className="flex flex-col justify-end w-full h-full border-x rounded-b-lg shadow-md">
-        {request !== true && (
+        {request !== true && allDemos.length === 0 && !fetchingData && (
           <div className="h-full flex justify-center items-center">
             <CardLoader />
           </div>
         )}
 
-        {demos.length >= 3 &&
+        {fetchingData && (
+          <div className="h-full flex justify-center items-center">
+            <CardLoader />
+          </div>
+        )}
+
+        {demos.length >= 3 && demos[0].total_deals !== 0 && !fetchingData &&
           demos.map((demo, index) => (
             <DemoCard
               key={demo.id}
@@ -63,7 +69,7 @@ const BookedDemos = ({ allDemos, request }) => {
             />
           ))}
 
-        {demos.length === 0 && request === true && (
+        {demos.length !== 0 && demos[0].total_deals === 0 && request === true && !fetchingData && (
           <div className="flex justify-center items-center h-52 xl:h-full">
             <h1 className="text-slate-600 text-2xl italic">
               No Booked Demos 😿

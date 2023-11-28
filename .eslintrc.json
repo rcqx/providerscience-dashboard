@@ -41,7 +41,11 @@
     "indent": "off",
     // "no-unused-vars": "off",
     "import/extensions": "off",
-    "global-require": "off"
+    "global-require": "off",
+    "react/no-array-index-key": "off",
+    "no-trailing-spaces": "off",
+    "no-restricted-globals": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   },
   "overrides": [
     {

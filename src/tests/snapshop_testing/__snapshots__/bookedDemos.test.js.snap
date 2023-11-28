@@ -74,6 +74,16 @@ exports[`renders correctly 2`] = `
   </div>
   <div
     className="flex flex-col justify-end w-full h-full border-x rounded-b-lg shadow-md"
-  />
+  >
+    <div
+      className="flex justify-center items-center h-52 xl:h-full"
+    >
+      <h1
+        className="text-slate-600 text-2xl italic"
+      >
+        No Booked Demos 😿
+      </h1>
+    </div>
+  </div>
 </div>
 `;

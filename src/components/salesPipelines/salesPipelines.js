@@ -13,14 +13,13 @@ const SalesPipelines = () => {
 
   useEffect(() => {
     if (stages.length === 0) {
-      console.log('Enter valid url here');
-      // axios
-      //   .get(
-      //     'URL with parameters',
-      //   )
-      //   .then((res) => {
-      //     setStages(res.data.stages);
-      //   });
+      axios
+        .get(
+          'https://test.mycrmreporting.com/api/pipedrive/deals/32d2ebff-1cec-46ab-8c4d-0cfbf6f6cea8',
+        )
+        .then((res) => {
+          setStages(res.data.stages);
+        });
     }
   }, [stages]);
 

@@ -1,5 +1,10 @@
 # Provider Science Board
 
-![cover](./src/assets/cover.png)
+### Dashboard 
+![dashboard](./src/assets/1_dashboard.png)
 
-[Deployed version here](https://dev.d3df7izntj7md8.amplifyapp.com/)
+### People 
+![people](./src/assets/2_people.png)
+
+### Modal
+![modal](./src/assets/3_modal.png)

@@ -17,15 +17,15 @@ it('renders correctly', () => {
             metric: 'GeneratedDemo',
             goal: '10',
             is_circular: true,
-            _id: '645d53461fbe1dad12e87dfb'
+            _id: '645d53461fbe1dad12e87dfb',
           },
           {
             month: '2023-05-01T00:00:00.000Z',
             metric: 'GeneratedDemo',
             goal: '15',
             is_circular: true,
-            _id: '6463c25132dd3214e58bcfa2'
-          }
+            _id: '6463c25132dd3214e58bcfa2',
+          },
         ],
       },
       total_deals: 773,
@@ -44,15 +44,15 @@ it('renders correctly', () => {
             metric: 'GeneratedDemo',
             goal: '10',
             is_circular: true,
-            _id: '645d53461fbe1dad12e87dfb'
+            _id: '645d53461fbe1dad12e87dfb',
           },
           {
             month: '2023-05-01T00:00:00.000Z',
             metric: 'GeneratedDemo',
             goal: '15',
             is_circular: true,
-            _id: '6463c25132dd3214e58bcfa2'
-          }
+            _id: '6463c25132dd3214e58bcfa2',
+          },
         ],
       },
       total_deals: 254,
@@ -76,5 +76,5 @@ it('renders correctly', () => {
       request={true}
     />)
     .toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(tree2).toMatchSnapshot();
 });

@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { BsPeopleFill } from 'react-icons/bs';
+import { MdAddCircleOutline } from 'react-icons/md';
 import SalesPipelines from './salesPipelines/salesPipelines';
 import LeadGeneration from './leadGeneration/leadGeneration';
 import DiscoveredCalls from './discoveredCalls/discoveredCalls';
@@ -16,6 +19,7 @@ const Dashboard = () => {
   const demos = useSelector((state) => state.globalStore.demos);
   const [show, setShow] = useState(false);
   const [request, setRequest] = useState(null);
+  const [fetchingData, setFetchingData] = useState(null);
   const [counter, setCounter] = useState(0);
   const dateRange = useSelector((state) => state.globalStore.dateRange);
   const today = new Date().toLocaleDateString('en-US', {
@@ -33,31 +37,34 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!localStorage.getItem('dateRange')) {
-      console.log('Enter valid endpoint here');
-      // const dateRange = JSON.parse(localStorage.getItem('dateRange'));
-      // axios
-      //   .get(
-      //   `URL with parameters`,
-      //   )
-      //   .then((res) => {
-      //     dispatch(setStoredLeads(res.data.generated_lead));
-      //     dispatch(setStoredCalls(res.data.generated_discovery));
-      //     dispatch(setStoredDemos(res.data.generated_demo));
-      //     setRequest(true);
-      //   });
+      localStorage.setItem('dateRange', JSON.stringify({ startDate: yesterday, endDate: today }));
+      axios
+        .get(
+          `https://test.mycrmreporting.com/api/pipedrive/deals/32d2ebff-1cec-46ab-8c4d-0cfbf6f6cea8?startDate=${Object.keys(dateRange).length === 0
+            ? yesterday
+            : dateRange.startDate
+          }&endDate=${Object.keys(dateRange).length === 0 ? today : dateRange.endDate
+          }`,
+        )
+        .then((res) => {
+          dispatch(setStoredLeads(res.data.generated_lead));
+          dispatch(setStoredCalls(res.data.generated_discovery));
+          dispatch(setStoredDemos(res.data.generated_demo));
+          setRequest(true);
+        });
     } else {
-      console.log('Enter valid endpoint here');
-      // const dateRange = JSON.parse(localStorage.getItem('dateRange'));
-      // axios
-      //   .get(
-      //   `URL with parameters`,
-      //   )
-      //   .then((res) => {
-      //     dispatch(setStoredLeads(res.data.generated_lead));
-      //     dispatch(setStoredCalls(res.data.generated_discovery));
-      //     dispatch(setStoredDemos(res.data.generated_demo));
-      //     setRequest(true);
-      //   });
+      const dateRange = JSON.parse(localStorage.getItem('dateRange'));
+      axios
+        .get(
+          `https://test.mycrmreporting.com/api/pipedrive/deals/32d2ebff-1cec-46ab-8c4d-0cfbf6f6cea8?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`,
+        )
+        .then((res) => {
+          dispatch(setStoredLeads(res.data.generated_lead));
+          dispatch(setStoredCalls(res.data.generated_discovery));
+          dispatch(setStoredDemos(res.data.generated_demo));
+          setRequest(true);
+          setFetchingData(false);
+        });
     }
   }, [dateRange]);
 
@@ -104,18 +111,27 @@ const Dashboard = () => {
           }`}
       >
         <button
-          className="px-6 py-1 rounded-md text-white bg-sky-500 hover:bg-slate-800 absolute top-1 right-0 mr-5 md:mr-10 mt-4 lg:mt-5 font-bold"
+          className="px-2 md:px-5 py-2 text-sm rounded-md flex justify-center items-center gap-2 text-white bg-sky-500 hover:bg-slate-800 absolute top-0 right-0 mr-5 md:mr-10 mt-4 lg:mt-5 font-bold"
           onClick={() => setShow(!show)}
         >
-          Set Goal
+          <MdAddCircleOutline size={20} />
+          Goal
         </button>
+        <Link to="/people">
+          <button
+            className="px-5 py-2 flex justify-center items-center gap-3 rounded-md text-white bg-sky-500 hover:bg-slate-800 absolute top-0 right-24 md:right-[6.5em] mr-5 md:mr-10 mt-4 lg:mt-5 font-bold"
+            onClick={() => setShow(!show)}
+          >
+            <BsPeopleFill size={20} />
+          </button>
+        </Link>
         <SalesPipelines />
         <div className="h-[70%] flex flex-col xl:flex-row gap-3 min-w-[300px]">
-          <LeadGeneration allDeals={leads} request={request} />
-          <DiscoveredCalls allCalls={calls} request={request} />
-          <BookedDemos allDemos={demos} request={request} />
+          <LeadGeneration allDeals={leads} request={request} fetchingData={fetchingData} />
+          <DiscoveredCalls allCalls={calls} request={request} fetchingData={fetchingData} />
+          <BookedDemos allDemos={demos} request={request} fetchingData={fetchingData} />
         </div>
-        <Footer />
+        <Footer setFetchingData={setFetchingData} />
       </div>
       <Modal
         show={show}

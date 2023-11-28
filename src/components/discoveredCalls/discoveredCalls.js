@@ -1,7 +1,7 @@
 import CallCard from './callCard';
 import CardLoader from '../cardLoader';
 
-const DiscoveredCalls = ({ allCalls, request }) => {
+const DiscoveredCalls = ({ allCalls, request, fetchingData }) => {
   const calls = allCalls
     .slice(0, 6)
     .sort((a, b) => b.total_deals - a.total_deals);
@@ -20,13 +20,19 @@ const DiscoveredCalls = ({ allCalls, request }) => {
         </h1>
       </div>
       <div className="flex flex-col justify-end w-full h-full border-x rounded-b-lg shadow-md">
-        {request !== true && (
+        {request !== true && allCalls.length === 0 && !fetchingData && (
           <div className="h-full flex justify-center items-center">
             <CardLoader />
           </div>
         )}
 
-        {calls.length >= 3 && calls[0].total_deals !== 0 &&
+        {fetchingData && (
+          <div className="h-full flex justify-center items-center">
+            <CardLoader />
+          </div>
+        )}
+
+        {calls.length >= 3 && calls[0].total_deals !== 0 && !fetchingData &&
           calls.map((call, index) => (
             <CallCard
               key={call.id}
@@ -56,7 +62,7 @@ const DiscoveredCalls = ({ allCalls, request }) => {
             />
           ))}
 
-        {calls.length !== 0 && calls[0].total_deals === 0 && request === true && (
+        {calls.length !== 0 && calls[0].total_deals === 0 && request === true && !fetchingData && (
           <div className="flex justify-center items-center h-52 xl:h-full">
             <h1 className="text-slate-600 text-2xl italic">
               No Calls Generated 📞

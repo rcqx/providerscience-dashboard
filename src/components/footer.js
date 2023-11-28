@@ -4,11 +4,12 @@ import Datepicker from 'react-tailwindcss-datepicker';
 import { setDateRange } from '../redux/features/globalStoreSlice';
 import logo from '../assets/ps-logo-dark.svg';
 
-const Footer = () => {
+const Footer = ({ setFetchingData }) => {
   const [isMobile, setIsMobile] = useState(false);
   const dispatch = useDispatch();
   const handleValueChange = (newValue) => {
     localStorage.setItem('dateRange', JSON.stringify(newValue));
+    setFetchingData(true);
     dispatch(setDateRange(newValue));
   };
   const today = new Date().toLocaleDateString('en-US', {

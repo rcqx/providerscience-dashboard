@@ -1,7 +1,7 @@
 import LeadCard from './leadCard';
 import CardLoader from '../cardLoader';
 
-const LeadGeneration = ({ allDeals, request }) => {
+const LeadGeneration = ({ allDeals, request, fetchingData }) => {
   const deals = allDeals
     .slice(0, 6)
     .sort((a, b) => b.total_deals - a.total_deals)
@@ -26,13 +26,19 @@ const LeadGeneration = ({ allDeals, request }) => {
         </h1>
       </div>
       <div className="flex flex-col justify-end w-full h-full border-x rounded-b-lg shadow-md">
-        {request !== true && (
+        {request !== true && allDeals.length === 0 && !fetchingData && (
           <div className="h-full flex justify-center items-center">
             <CardLoader />
           </div>
         )}
 
-        {deals.length >= 3 &&
+        {fetchingData && (
+          <div className="h-full flex justify-center items-center">
+            <CardLoader />
+          </div>
+        )}
+
+        {deals.length >= 3 && deals[0].total_deals !== 0 && !fetchingData &&
           deals.map((deal, index) => (
             <LeadCard
               key={deal.id}
@@ -65,7 +71,7 @@ const LeadGeneration = ({ allDeals, request }) => {
             />
           ))}
 
-        {deals.length !== 0 && deals[0].total_deals === 0 && request === true && (
+        {deals.length !== 0 && deals[0].total_deals === 0 && request === true && !fetchingData && (
           <div className="flex justify-center items-center h-52 xl:h-full">
             <h1 className="text-slate-600 text-2xl italic">
               No deals generated 🤝

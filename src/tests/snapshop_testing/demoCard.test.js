@@ -25,7 +25,7 @@ it('renders correctly', () => {
       madeCalls={mockCard.madeCalls}
       goal={mockCard.goal}
       isCircular={mockCard.isCircular}
-    />
+    />,
   ).toJSON();
   expect(tree).toMatchSnapshot();
 
@@ -40,7 +40,7 @@ it('renders correctly', () => {
       madeCalls={mockCard.madeCalls}
       goal={mockCard.goal}
       isCircular={mockCard.isCircular}
-    />
+    />,
   ).toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(tree2).toMatchSnapshot();
 });
